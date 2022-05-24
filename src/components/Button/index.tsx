@@ -6,11 +6,12 @@ import { styles } from "./styles"
 
 interface Props extends TouchableOpacityProps {
   isLoading: boolean
+  isDisabled?: boolean
 }
 
-export function Button({ isLoading, ...rest }: Props) {
+export function Button({ isLoading, isDisabled, ...rest }: Props) {
   return (
-    <TouchableOpacity style={styles.container} {...rest}>
+    <TouchableOpacity disabled={isDisabled} style={styles.container} {...rest}>
       {isLoading ? (
         <ActivityIndicator color={theme.colors.text_on_brand_color} />
       ) : (

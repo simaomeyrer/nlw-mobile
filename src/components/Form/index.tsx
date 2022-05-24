@@ -86,7 +86,11 @@ export function Form({ feedbackType, onFeedbackCanceled, onFeedbackSent }: Props
           onRemoveShot={handleScreenshotRemove}
           screenshot={screenshot}
         />
-        <Button onPress={handleSendFeedback} isLoading={isSendingFeedback} />
+        <Button
+          onPress={handleSendFeedback}
+          isLoading={isSendingFeedback}
+          isDisabled={comment.length <= 0}
+        />
       </View>
     </View>
   )
